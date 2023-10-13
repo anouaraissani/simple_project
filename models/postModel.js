@@ -12,4 +12,9 @@ const postSchema = new mongoose.Schema({
 
 const Post = mongoose.model('Post', postSchema); 
 
+Post.find()
+.populate("postedBy")
+.then(p=>console.log(p))
+.catch(error=>console.log(error));
+
 module.exports = Post
